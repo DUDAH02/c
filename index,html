@@ -5,21 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>conversor de temperatura</title><!--Conversor de temperatur 01-->
-        <style>
-            main {
-                display: flex;
-            }
-            main section form fieldset h2 {
-                text-align: center;
-                line-height: 0;
-                font-size: 2em;
-            }
-            input[type="submit"] {
-                width: 100%;
-                padding: 15px 30px;
-                color: #ee3838;
-            }
-        </style>    
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
     	<main>
@@ -43,45 +29,6 @@
             	</fieldset>
     		</form>
     	</main>
+        <script src="js/script.js"></script>
     </body>
-    <script>
-        //selecionando todo o formulário
-        const form = document.querySelector('#form')
-        //selecionando o input de entrada (Celcius)
-        const entrada = document.querySelector('#temp-c')
-
-
-        //selecionando o input de saída Fahrenheit
-        const inputF = document.querySelector('#temp-f')
-        //selecionando o input de saída Kelvin
-        const inputK = document.querySelector('#temp-k')
-        //selecionando o input de saída Rankine
-        const inputR = document.querySelector('#temp-r')
-        //selecionando o botão
-        const btn = document.querySelector('#submit')
-
-        //evento para não enviar o formulário
-        form.addEventListener('submit', (event) => {
-            event.preventDefault()  
-        })
-        //evento ao clicar no botão
-        btn.addEventListener('click', () => {
-            //value do input Celcius
-            const valorInput = parseFloat(entrada.value)
-            
-            //cálculo Fahrenheit
-            let resultadoF = inputF
-            resultadoF.value = (valorInput*1.8) + 32
-            
-            //cálculo Kelvin
-            //K = C + 273,15
-            let resultadoK = inputK
-            resultadoK.value = valorInput + 273.15
-
-            //cálculo Rankine
-            // R = (C+273,15) * 9/5
-            let resultadoR = inputR
-            resultadoR.value = (valorInput + 273.15) * 1.8
-        })
-    </script>
 </html>
